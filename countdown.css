@@ -34,3 +34,19 @@ html {
   padding: 20px;
   text-align: center;
 }
+
+@media screen and (max-width: 577px) {
+  .bg-image {
+    background-image: url("fotoo/icon.jpg");
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-text h1#demo {
+    font-size: 15px !important;
+  }
+}

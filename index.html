@@ -10,13 +10,11 @@
   </head>
   <body id="konten">
     <div class="bg-image"></div>
-
     <div class="bg-text" id="tulisan">
       <h2>📅 January 11, 2023</h2>
       <h1 style="font-size: 50px" id="demo"></h1>
       <p>To A Special Day</p>
     </div>
-
     <script>
       document.getElementById("konten").style.visibility = "hidden";
       var countDownDate = new Date("Jan 11, 2023 00:01:00").getTime();
@@ -27,15 +25,33 @@
         var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementById("demo").innerHTML =
-          days +
-          "<span style='color:pink; margin-right:30px; margin-left:8px'>Days</span>" +
-          hours +
-          "<span style='color:pink; margin-right:30px; margin-left:8px'>Hours</span>" +
-          minutes +
-          "<span style='color:pink; margin-right:30px; margin-left:8px'>Minutes</span>" +
-          seconds +
-          "<span style='color:pink; margin-right:30px; margin-left:8px'>Seconds</span>";
+        function mediaKueri(x) {
+          if (x.matches) {
+            document.getElementById("demo").innerHTML =
+              days +
+              "<span style='color:pink; margin-right:5px; margin-left:8px'>Days</span>" +
+              hours +
+              "<span style='color:pink; margin-right:5px; margin-left:8px'>Hours</span>" +
+              minutes +
+              "<span style='color:pink; margin-right:5px; margin-left:8px'>Minutes</span>" +
+              "</br>" +
+              seconds +
+              "<span style='color:pink; margin-right:5px; margin-left:8px'>Seconds</span>";
+          } else {
+            document.getElementById("demo").innerHTML =
+              days +
+              "<span style='color:pink; margin-right:30px; margin-left:8px'>Days</span>" +
+              hours +
+              "<span style='color:pink; margin-right:30px; margin-left:8px'>Hours</span>" +
+              minutes +
+              "<span style='color:pink; margin-right:30px; margin-left:8px'>Minutes</span>" +
+              seconds +
+              "<span style='color:pink; margin-right:30px; margin-left:8px'>Seconds</span>";
+          }
+        }
+        var x = window.matchMedia("(max-width: 577px)");
+        mediaKueri(x);
+        x.addListener(mediaKueri);
         if (distance < 0) {
           clearInterval(x);
           location.href = "content.html";
