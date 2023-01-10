@@ -160,6 +160,7 @@ p {
   visibility: hidden;
   border-radius: 50%;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 #fotolove:hover {
   transform: scale(0.8);
@@ -238,7 +239,7 @@ p {
   flex-shrink: 0;
   width: 90%;
   height: 150px;
-  margin: 0 15px 0 0;
+  margin: 0 15px 10px 0;
   scroll-snap-align: center;
 }
 #pergeseran > *:last-child {
@@ -369,7 +370,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 2px;
 }
 #k2,
 #final1 {
